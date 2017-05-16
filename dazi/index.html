@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style:none;
+        }
+        html,body{
+            height:100%;
+            overflow: hidden;
+            user-select: none;
+        }
+        .sence{
+            width:100%;
+            height:100%;
+            margin:0 auto;
+            background-color: #ccc;
+        }
+        .main{
+            width:100%;
+            height:100%;
+            background-color: aqua;
+            float: left;
+            position: relative;
+            background-image: url("img/bg.png");
+        }
+        .control{
+            width:800px;
+            height:65px;
+            /*background-color: #0085ee;*/
+            float: left;
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            margin: 0 auto;
+
+        }
+        /*.box{*/
+            /*width:80%;*/
+            /*height:50px;*/
+            /*margin: 10px auto;*/
+            /*background-color: red;*/
+            /*border-radius: 10px;*/
+        /*}*/
+        .box .name{
+            height:20px;
+            text-align: center;
+            line-height: 20px;
+        }
+        /*.scor,.life,.state{*/
+            /*width:80%;*/
+            /*height:20px;*/
+            /*!*background-color: green;*!*/
+            /*margin:0 auto;*/
+            /*text-align: center;*/
+            /*line-height:20px;*/
+            /*border-radius: 5px;*/
+        /*}*/
+        .defen{
+            width: 195px;
+            height:65px;
+            background-image: url("img/scor.png");
+            background-size: 100% 100%;
+            float: left;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        .scor{
+            width: 100%;
+            height:100%;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 80px;
+            color: #fff;
+            text-align: center;
+
+        }
+        .life{
+            width: 100%;
+            height:100%;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 80px;
+            color: #fff;
+            text-align: center;
+
+        }
+        .shengming{
+            width:240px;
+            height:65px;
+            margin-left: 30px;
+            background-image: url("img/life.png");
+            background-size: 100% 100%;
+            float: left;
+            position: absolute;
+            top:0;
+            left:225px;
+        }
+        /*.life{*/
+
+        /*}*/
+        .letter{
+            width: 80px;
+            height:80px;
+            text-align: center;
+            line-height: 80px;
+            position: absolute;
+            background-size: cover;
+        }
+        .pause{
+            width:93px;
+            height:93px;
+            background-image: url("img/continue.png");
+            background-size: cover;
+            position: absolute;
+            top:90px;
+            left:30px;
+            transition: all 0.3s linear;
+            cursor: pointer;
+        }
+        .pause:hover{
+            width: 100px;
+            height:100px;
+            left:26px;
+            top:87px;
+        }
+        .pause1{
+            width:65px;
+            height:65px;
+            position: absolute;
+            z-index:1;
+            top:0;
+            right:0;
+            background-image: url("img/stop.png");
+            background-size: cover;
+            cursor: pointer;
+        }
+        .xzk{
+            width:470px;
+            height:220px;
+            background-image: url("img/stopbox.png");
+            background-size: cover;
+            position: absolute;
+            z-index:5;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            margin: auto;
+            display:none;
+        }
+        .heipin{
+            width:100%;
+            height:100%;
+            background: rgba(0,0,0,0.3);
+            position: absolute;
+            display: none;
+        }
+        .chongxin{
+            width:93px;
+            height:93px;
+            background-image: url("img/restart.png");
+            background-size: cover;
+            position: absolute;
+            z-index: 5;
+            left:0;
+            right:0;
+            margin: 0 auto;
+            top:90px;
+            transition: all 0.5s linear;
+            cursor: pointer;
+        }
+        .chongxin:hover{
+            transform: rotate(360deg);
+        }
+        .fanhui{
+            width:93px;
+            height:93px;
+            background-image: url("img/quit.png");
+            background-size: cover;
+            position: absolute;
+            z-index:5;
+            right:30px;
+            top:90px;
+            transition: all 0.5s linear;
+            cursor: pointer;
+        }
+        .fanhui:hover{
+            right:60px;
+        }
+        .beijing{
+            width: 100%;
+            height:100%;
+            background-image: url("img/bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            z-index: 2;
+            left:0;
+            top:0;
+        }
+        .chongxin1{
+            width:93px;
+            height:93px;
+            background-image: url("img/restart.png");
+            background-size: cover;
+            position: absolute;
+            z-index: 5;
+            left:110px;
+            right:0;
+            top:270px;
+            transition: all 0.5s linear;
+            cursor: pointer;
+        }
+        .chongxin1:hover{
+            transform: rotate(360deg);
+        }
+        .fanhui1{
+            width:93px;
+            height:93px;
+            background-image: url("img/quit.png");
+            background-size: cover;
+            position: absolute;
+            right:110px;
+            top:270px;
+            transition: all 0.5s linear;
+            cursor: pointer;
+        }
+        .fanhui1:hover{
+            right:140px;
+        }
+        .logo1{
+            width:710px;
+            height:400px;
+            position: absolute;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            margin: auto;
+            animation: moves 2s linear infinite;
+        }
+        @keyframes moves {
+            0%{
+                left:-30px;
+            }
+            50%{
+                left:30px;
+            }
+            100%{
+                left:-30px;
+            }
+        }
+        .logo{
+            width: 710px;
+            height:250px;
+            background-image: url("img/logo.png");
+            background-size: 100% 100%;
+            position: absolute;
+        }
+        .logo2{
+            width:340px;
+            height: 100px;
+            background-image: url("img/choose.png");
+            background-size: 100% 100%;
+            position: absolute;
+            left:0;
+            top:300px;
+            margin-right: 30px;
+            cursor: pointer;
+            transition: all 0.3s linear;
+        }
+        .logo2:hover{
+            width: 360px;
+            height:120px;
+            left:-10px;
+            top:290px;
+        }
+        .start{
+            width: 340px;
+            height: 100px;
+            background-image: url("img/start.png");
+            background-size: cover;
+            position: absolute;
+            left: 370px;
+            top:300px;
+            cursor: pointer;
+            transition: all 0.5s linear;
+        }
+        .start:hover{
+            width:350px;
+            height:110px;
+            left:350px;
+            top:290px;
+        }
+        .gameover{
+            width:480px;
+            height:420px;
+            background-image: url("img/over.png");
+            background-size: cover;
+            position: absolute;
+            z-index: 5;
+            left: 0;
+            right:0;
+            top:0;
+            bottom:0;
+            margin: auto;
+            display: none;
+        }
+        .scors{
+            width:50px;
+            height:50px;
+            position: absolute;
+            left:280px;
+            top:140px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+        }
+        .paihangbang{
+            width: 300px;
+            height:30px;
+            background-color: #c60000;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            text-align: center;
+            line-height: 30px;
+            font-family: 微软雅黑;
+            position: absolute;
+            top: 50px;
+            left:50px;
+            cursor: pointer;
+        }
+        .bests{
+            width:300px;
+            height:270px;
+            position: absolute;
+            left:50px;
+            top:80px;
+            display: none;
+        }
+        .bestscor,.bestscor1,.bestscor2,.sscor,.sscor1,.sscor2,.tscor,.tscor1,.tscor2{
+            width: 100px;
+            height:90px;
+            background-color: #5fe91e;
+            float: left;
+            font-size: 20px;
+            line-height: 90px;
+            text-align: center;
+            color: #000;
+            font-weight: bold;
+            font-family: "微软雅黑";
+        }
+    </style>
+</head>
+<body>
+     <div class="sence">
+         <div class="main">
+             <div class="heipin"></div>
+         </div>
+
+         <div class="control">
+             <div class="box">
+                 <div class="defen">
+                 <div class="scor">0</div>
+                 </div>
+             </div>
+             <div class="box">
+                 <div class="shengming"></div>
+                 <div class="life">5</div>
+             </div>
+             <div class="box">
+                 <div class="name"></div>
+                 <div class="state"></div>
+             </div>
+
+             <div class="btn pause1"></div>
+         </div>
+     </div>
+
+     <div class="xzk">
+         <div class="btn pause"></div>
+         <div class="chongxin"></div>
+         <div class="fanhui"></div>
+     </div>
+<div class="beijing">
+    <div class="logo1">
+    <div class="logo"></div>
+    <div class="logo2"></div>
+    <div class="start"></div>
+    </div>
+</div>
+<div class="gameover">
+    <div class="chongxin1"></div>
+    <div class="fanhui1"></div>
+    <div class="scors"></div>
+</div>
+<div class="paihangbang">排行榜</div>
+<div class="bests">
+    <div class="bestscor">最高分</div>
+    <div class="bestscor1"></div>
+    <div class="bestscor2">0</div>
+    <div class="sscor">第二名</div>
+    <div class="sscor1"></div>
+    <div class="sscor2">0</div>
+    <div class="tscor">第三名</div>
+    <div class="tscor1"></div>
+    <div class="tscor2">0</div>
+</div>
+</body>
+<script>
+    //获取游戏区域
+    var main=document.querySelector('.main');
+    //获取开始按钮
+    var starts=document.querySelector('.start');
+    //获取显示关卡区域
+    var state=document.querySelector('.state');
+    //获取显示分数区域
+    var scor=document.querySelector('.box .defen .scor');
+    //定义全局开关
+    var falg=true;
+    //获取暂停按钮
+    var pause=document.querySelector('.pause');
+    //获取生命显示区域
+    var life=document.querySelector('.life');
+    //定义起始每次出现的个数
+    var num=3;
+    //创建一个类
+    const paihangbang=document.querySelector('.paihangbang');
+    var bestscor1=document.querySelector('.bestscor1');
+    const bests=document.querySelector('.bests');
+    var bestscor2=document.querySelector('.bestscor2');
+    var sscor1=document.querySelector('.sscor1');
+    var sscor2=document.querySelector('.sscor2');
+    var tscor1=document.querySelector('.tscor1');
+    var tscor2=document.querySelector('.tscor2');
+    const xzk=document.querySelector('.xzk');
+    const heipin=document.querySelector('.heipin');
+    const pause1=document.querySelector('.pause1');
+    const logo1=document.querySelector('.logo1');
+    const beijing=document.querySelector('.beijing');
+    const gameover=document.querySelector('.gameover');
+    const scors=document.querySelector('.scors');
+    class Game{
+        //将游戏区域、分数、关卡、生命值传入构造函数
+        constructor(main,scor,state,life){
+            //定义属性
+            this.main=main;
+            this.num=3;
+            this.obj={};
+            this.scorele=scor;
+            this.scor=0;
+            this.stateele=state;
+            this.state=1;
+            //定义速度默认为5
+            this.speed=5;
+            this.life=5;
+            this.lifeele=life;
+            
+            //获取页面的高度
+            this.height=window.innerHeight;
+            this.st=null;
+            this.flag=true;
+            this.bestscor=localStorage.bestscor?JSON.parse(localStorage.bestscor):[];
+        }
+        //创建一个字母
+        _createLetter(){
+            //创建一个标签
+            var div=document.createElement('div');
+            //定义它的类名
+            div.className='letter';
+            //通过dowhile循环防止出现同样的字母
+            do{
+                //获取A-Z的ascll值
+                var rn=Math.floor(Math.random()*26+65);
+                //将其值转换为对应的原值
+                var le=String.fromCharCode(rn);
+            }
+            //判断页面中是否有该字母;若有该字母则返回去重新调用，直到出现和该字母不一样的字母在继续往下执行
+            while(this.obj[le]);
+            //给div盒子添加样式
+            div.style.backgroundImage=`url(img/${le}.png)`;
+            //通过dowhile循环获取该元素距离游戏区域的左边的位置
+            do{
+                //获取0-720的一个随机数
+                var r=Math.random()*1300;
+                if(r<130){
+                    r=r+130;
+                }
+                if(r>1170){
+                    r=r-130;
+                }
+                var rl=r;
+            }
+            //通过回调check函数防止出现位置有交集的现象，也就是说保证每个元素都不会与另一个元素位置发生粘合
+            while(this._check(rl));
+            //获取0-100的随机数字赋值给rt
+            var rt=-Math.random()*100;
+            //把rl赋值给div盒子属性的left属性
+            div.style.left=rl+'px';
+            //把rt赋值给div盒子属性的top属性
+            div.style.top=rt+'px';
+            //创建该字母对象，并把这些属性付给该字母对象
+            this.obj[le]={left:rl,top:rt,el:div};
+            //将div盒子添加到游戏区域中
+            main.appendChild(div);
+        }
+        //通过check函数防止位置有交叉的现象
+        _check(left){
+            //for in 遍历每个对象
+            for(var i in this.obj){
+                //当前的每个对象的位置若小于前一个对象的位置加当前对象的宽度且当前的每个对象的位置大于前一个对象的位置减去当前对象的宽度时，返回true,让do在执行一次
+                if(this.obj[i].left-80<left&&this.obj[i].left+80>left){
+                    return true;
+                }
+            }
+        }
+        //调用start方法开始各种方法
+        start(){
+            //一次执行num次createLetter方法，让屏幕同时显示num个字母
+            for(let i=0;i<this.num;i++){
+                this._createLetter();
+            }
+            //调用move方法
+            this._move();
+            //调用keydown方法
+            this._keydown();
+            this.getdata();
+            this.bestscor=localStorage.bestscor?JSON.parse(localStorage.bestscor):[];
+        }
+        _move(){
+            //设置时间间隔函数
+
+            this.st=setInterval(function () {
+                //遍历每个字母对象
+                for(var i in this.obj){
+                    //定义一个变量用来接收该对象距离顶部的值
+                    var t=this.obj[i].top;
+                    //每个一段是假让t加一下速度
+                    t+=this.speed;
+                    //吧该变量重新赋值给字母对象的top属性
+                    this.obj[i].top=t;
+                    //让该对象的el属性也移动同样的高度
+                    this.obj[i].el.style.top=t+'px';
+                    //当t>游戏区域的高度时
+                    if(t>this.height){
+                        //让生命值减一
+                        this.life--;
+                        //通过赋值在浏览器中显示出来当前的生命值
+                        this.lifeele.innerHTML=this.life;
+                        //把该字母在浏览器中去掉
+                        this.main.removeChild(this.obj[i].el);
+                        //对象也去掉
+                        delete this.obj[i];
+                        //并重新创建一个字母对象，保证游戏区域显示的是三个字母
+                        this._createLetter();
+                        //若生命值减为0；
+                        if(this.life==0){
+                            //调用gameover方法，结束游戏
+                            this._gameover();
+                            //通过return跳出move函数
+                            return;
+                        }
+                    }
+                }
+            }.bind(this),50)
+        }
+
+        _keydown(){
+            //键盘按下事件
+            document.onkeydown=function(e){
+                //用keycode接收当前所按键的键盘码
+                var keycode=e.keyCode;
+                //把它转换为对应的值
+                var le=String.fromCharCode(keycode);
+                //判断屏幕是否有该字母对象
+                if(this.obj[le]){
+                    //若有则删除该字母
+                    this.main.removeChild(this.obj[le].el);
+                    delete this.obj[le];
+                    //让分数增加
+                    this.scor++;
+                    //通过页面显示出来
+                    this.scorele.innerHTML=this.scor;
+                    //分数每增加10分切换关卡
+                    if(this.scor%10==0){
+                        //调用upstate方法
+                        this._upstate();
+                    }
+                    //重新调用createLetter方法创建一个新字母对象
+                    this._createLetter();
+                }
+             }.bind(this);
+        }
+        _upstate(){
+            //每次调用该函数让关卡自增一下
+            this.state++;
+            //在页面中显示
+            this.stateele.innerHTML=this.state;
+            //若关卡小于等于4
+            if(this.state<=4){
+                //在创建一个新的字母对象，也就是关卡每增1让页面显示的字母数量也增加1，最对6个
+                this._createLetter();
+            }
+            //若关卡大于4
+            else{
+                //让速度增加，关卡每增加1，速度每增加1
+                this.speed++;
+            }
+        }
+        //游戏结束函数
+        _gameover(){
+            //弹出结束对话框
+            scors.innerHTML=this.scor;
+            gameover.style.display='block';
+            //将游戏区域的内容清空，速度，关卡，生命都变为原来的默认值并停止时间间隔函数
+            heipin.style.display='block';
+            if(this.bestscor.length<3||this.bestscor.length>=3&&this.scor>this.bestscor[2].scor){
+                var name=prompt('请输入您的名字');
+                this.bestscor.push({name,scor:this.scor});
+                this.bestscor.sort(function (a,b) {
+                    if(a.scor>b.scor){
+                        return -1;
+                    }
+                    else{
+                        return 1;
+                    }
+                })
+//                this.bestscor.pop();
+                localStorage.bestscor=JSON.stringify(this.bestscor);
+
+            }
+            this.getdata();
+            this.main.innerHTML='';
+            this.obj={};
+            this.speed=5;
+            this.scor=0;
+            this.scorele.innerHTML=this.scor;
+            this.life=5;
+            this.lifeele.innerHTML=5;
+            this.state=1;
+            this.stateele.innerHTML=this.state;
+            this.flag=true;
+            clearInterval(this.st);
+        }
+        getdata(){
+            var data=this.bestscor;
+            data.forEach(function (v,i) {
+                bestscor1.innerHTML=data[0].name;
+                bestscor2.innerHTML=data[0].scor;
+                if(data[1]){
+                    sscor1.innerHTML=data[1].name;
+                    sscor2.innerHTML=data[1].scor;
+                }
+                else{
+                    sscor1.innerHTML='';
+                    sscor2.innerHTML='';
+                }
+                if(data[2]){
+                    tscor1.innerHTML=data[2].name;
+                    tscor2.innerHTML=data[2].scor;
+                }
+                else{
+                    tscor1.innerHTML='';
+                    tscor2.innerHTML='';
+                }
+            })
+        }
+        //停止方法
+        pause(){
+            clearInterval(this.st);
+            document.onkeydown=null;
+        }
+        //暂停后开始方法
+        play(){
+            this._move();
+            this._keydown();
+        }
+    }
+    //创建一个对象调用Game类
+    var game=new Game(main,scor,state,life);
+    //给该对象定义一个开关
+    game.flag=true;
+    //点击开始按钮的事件
+    starts.onclick=function () {
+        beijing.style.display='none';
+        xzk.style.display='none';
+        heipin.style.display='none';
+        //开关开着可执行start方法，让字母动起来
+        if(game.flag){
+            game.start();
+            //关掉开关，防止游戏中途点击开关再次调用start方法，造成速度翻倍，常理上的错误
+            game.falg=false;
+
+        }
+    }
+//    game.start();
+    //在定义个开关，用来判断暂停按钮
+//    var ztflag=true;
+    //暂停按钮的事件
+    pause1.onclick=function () {
+        game.pause();
+        heipin.style.display='block';
+        xzk.style.display='block';
+    }
+    pause.onclick=function () {
+        xzk.style.display='none';
+        heipin.style.display='none';
+        //判断开关
+//        if(ztflag){
+//            ztflag=false;
+            //改变暂停按钮的字
+//            pause.innerHTML='继续';
+            //调用pause方法让游戏暂停
+            game.play();
+//        }
+        //否则游戏运行
+//        else{
+////            ztflag=true;
+//            pause.innerHTML='暂停';
+//            //调用play方法
+//            game.play();
+//        }
+        //实现暂停和继续的互相切换
+//        ztflag=!ztflag;
+    }
+    const fanhui=document.querySelector('.fanhui');
+    fanhui.onclick=function () {
+//        game.flag=false;
+        heipin.style.display='none';
+        beijing.style.display='block';
+        xzk.style.display='none';
+
+    }
+    const chongxin=document.querySelector('.chongxin');
+    chongxin.onclick=function () {
+        xzk.style.display='none';
+        heipin.style.display='none';
+        main.innerHTML='';
+        game._gameover();
+        gameover.style.display='none';
+        game.start();
+    }
+    const fanhui1=document.querySelector('.fanhui1');
+    fanhui1.onclick=function () {
+//        game.flag=false;
+        beijing.style.display='block';
+        xzk.style.display='none';
+        heipin.style.display='none';
+        gameover.style.display='none';
+    }
+    const chongxin1=document.querySelector('.chongxin1');
+    chongxin1.onclick=function () {
+        xzk.style.display='none';
+        heipin.style.display='none';
+        main.innerHTML='';
+        game._gameover();
+        gameover.style.display='none';
+        game.start();
+    }
+    paihangbang.onclick=function () {
+        bests.style.display='block';
+    }
+    main.onclick=function(){
+        bests.style.display='none';
+    }
+</script>
+
+</html>
