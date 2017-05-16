@@ -90,6 +90,7 @@ class tcs{
 			let shetou;
 			if(that.shefx=='right'){
               shetou={x:that.she[that.she.length-1].x,y:that.she[that.she.length-1].y+1};
+
 			}
 			if(that.shefx=='top'){
               shetou={x:that.she[that.she.length-1].x-1,y:that.she[that.she.length-1].y};
@@ -255,6 +256,7 @@ class tcs{
 			if(e.keyCode==97||e.keyCode==65){
                 if(that.shefx!='right')                
 				that.shefx='left';
+			    // that.she[that.she.length-1].style.transform='rotate(90deg)';
 			}
 			if(e.keyCode==119||e.keyCode==87){
                 if(that.shefx!='bottom')

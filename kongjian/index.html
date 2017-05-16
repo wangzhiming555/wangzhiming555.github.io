@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/sp.css">
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            user-select: none;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .hezi{
+            width: 100%;
+            height: 100%;
+            /*border: 1px solid #000;*/
+            position: relative;
+            /*margin: 50px auto;*/
+            perspective: 700px;
+        }
+        .box{
+            width: 100%;
+            height:100%;
+            /*position: relative;*/
+            /*left: 0;*/
+            /*top:0;*/
+            /*right:0;*/
+            /*bootom:0;*/
+            /*margin:auto;*/
+            transform-style: preserve-3d;
+            /*transition: all 5s linear;*/
+        }
+        .hezi:hover .box{
+            transform: rotate3d(1,1,0,360deg);
+        }
+        .box li{
+            width: 100%;
+            height:100%;
+            position: absolute;
+            top:0;
+            left:0;
+            backface-visibility: visible;
+        }
+        .box li:nth-child(1){
+            transform: rotateY(-90deg);
+            transform-origin: left;
+            background-color:deeppink;
+            background-image: url(img/3.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .box li:nth-child(2){
+            transform: rotateY(90deg);
+            transform-origin: right;
+            background-color:#fffd22;
+            background-image: url(img/4.jpg);
+            background-size: cover;
+            /*background-position: 270px  0px;*/
+            background-repeat: no-repeat;
+        }
+        .box li:nth-child(3){
+            /*transform: translateZ(200px);*/
+            background-color: #0085fe;
+            background-image: url(img/5.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .box li:nth-child(4){
+            background: #cd21f3;
+            transform: translateZ(0px);
+            background-image: url(img/6.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .box li:nth-child(5){
+            transform: rotateX(90deg);
+            transform-origin: top;
+            background-color:#5fe91e;
+            background-image: url(img/1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .box li:nth-child(6){
+            transform: rotateX(-90deg);
+            transform-origin: bottom;
+            background-color: #ff5722;
+            background-image: url(img/2.jpg);
+        }
+    </style>
+</head>
+<body>
+    <div class="hezi">
+        <ul class="box">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li>
+                <div class="container">
+        <video >
+            <source src="1.mp4">
+        </video>
+        <div class="controls" >
+            <div class="start">&#xe62a;</div>
+            <div class="reload">&#xe622;</div>
+            <div class="progress">
+                <div class="inner"></div>
+            </div>
+            <div class="time">
+                <span id="now">00:00</span>
+                <span id="all">00:00</span>
+            </div>
+            <div class="volume">
+                <span>&#xe691;</span>
+                <div class="mask">
+                    <div class="vol">
+                        <div class="kuai"></div>
+                    </div>
+                    <div class="mask11"></div>
+                </div>
+
+            </div>
+            <div class="fullscreen">&#xe638;</div>
+        </div>
+    </div>
+            </li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript" src='js/hover.js'></script>
+<script type="text/javascript" src='js/sp.js'></script>
+<script>
+    var tops=document.querySelector('.box li:nth-child(5)');
+    var bottoms=document.querySelector('.box li:nth-child(6)');
+    var qian=document.querySelector('.box li:nth-child(3)');
+    var box=document.querySelector('.box');
+    var rights=document.querySelector('.box li:nth-child(2)');
+    var cx=window.innerWidth;
+    var cy=window.innerHeight;
+    tops.style.width=tops.style.height=bottoms.style.width=bottoms.style.height=cx+'px';
+    bottoms.style.top=-(cx-cy)+'px';
+    qian.style.transform=`translateZ(${cx}px)`;
+    box.style.transform='translateZ(-500px)';
+    box.style.transformOrigin='center center 600px';
+//    rights.style.transformOrigin=`${cx}px,${0}px,${cx/2}px`;
+//    rights.style.transform='rotateY(180deg)';
+    var a=0;
+    var b=0;
+    box.onmousedown=function (e) {
+        var c=e.clientX;
+        box.onmousemove=function (e) {
+            var d=e.clientX;
+            b=d-c;
+            box.style.transform=`translateZ(-500px) rotateY(${a+b}deg)`;
+        }
+        box.onmouseup=function () {
+            a+=b;
+            box.onmousemove=null;
+            box.onmouseup=null;
+        }
+    }
+</script>
+</html>
