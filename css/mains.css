@@ -104,6 +104,7 @@ body{
 	background-repeat: no-repeat;
 }
 .jianli{
+	/*width: 120px;*/
 	font-size: 20px;
 	text-align: center;
 	color: #000;
@@ -116,6 +117,9 @@ body{
 	margin-top: 20px;
 	line-height: 30px;
 	color: #000;
+	position: relative;
+	top: 0px;
+	left: -1200px;
 }
 .geren dl{
 	width: 70%;
@@ -123,6 +127,8 @@ body{
 	border:1px solid #111;
 	margin: 15px auto;
 	color: #000;
+	position: relative;
+	left: 100%;
 	/*box-sizing: border-box;*/
 }
 .geren dl dt{
@@ -188,7 +194,8 @@ body{
     font-size: 20px;
     text-align: center;
     color: #eee;
-    margin-top: 20px;
+    position: relative;
+    top: -20px;
 }
 .a1111{
 	width: 100%;
@@ -199,19 +206,22 @@ body{
     width: 50%;
     line-height: 30px;
     color: #eee;
-   
     margin: 0 auto;
-    margin-top: 20px;
+    position: relative;
+    top: -120px;
 }
 .td{
 	width: 80%;
 	margin:5px auto;
+	position: relative;
+	top: 50px;
 }
 .kuang{
 	width: 1080px;
 	height: 330px;
 	position: relative;
     overflow: hidden;
+    top: 20px;
 }
 .suoyoucx{
 	width: 1350px;
@@ -307,6 +317,8 @@ body{
 	width: 33%;
 	height: 330px;
 	float: left;
+	transform: rotate(180deg);
+	transition: all 1s linear;
 }
 .xinqutu1{
 	width: 80%;
@@ -336,7 +348,7 @@ body{
 	color: #000;
 }
 .zuopin{
-	width: 25%;
+	width: 50%;
 	height: 250px;
 	float: left;
 }
@@ -347,12 +359,30 @@ body{
 	color: #000;
 	/*margin-top: 15px;*/
 }
+.zuopin1,.zuopin2,.zuopin3,.zuopin4{
+	width: 50%;
+	height: 250px;
+	float: left;
+}
+.zuopin3,.zuopin4{
+	top: 250px;
+}
+.zuopin1,.zuopin3{
+	position: absolute;
+	left: -1000px;
+}
+.zuopin2,.zuopin4{
+	position: absolute;
+	left: 1500px;
+}
 .zuopintu1{
 	width: 80%;
 	height: 80%;
 	margin: 0 auto;
 	background-size: 100% 100%;
 	background-image: url(../img/11.jpg);
+	box-shadow: 0px 0px 2px 2px #555;
+	border-radius: 10px;
 }
 .zuopintu2{
 	width: 80%;
@@ -360,6 +390,8 @@ body{
 	margin: 0 auto;
 	background-size: 100% 100%;
 	background-image: url(../img/12.jpg);
+	box-shadow: 0px 0px 2px 2px #555;
+	border-radius: 10px;
 }
 .zuopintu3{
 	width: 80%;
@@ -367,6 +399,8 @@ body{
 	margin: 0 auto;
 	background-size: 100% 100%;
 	background-image: url(../img/13.png);
+	box-shadow: 0px 0px 2px 2px #555;
+	border-radius: 10px;
 }
 .zuopintu4{
 	width: 80%;
@@ -374,6 +408,8 @@ body{
 	margin: 0 auto;
 	background-size: 100% 100%;
 	background-image: url(../img/14.jpg);
+	box-shadow: 0px 0px 2px 2px #555;
+	border-radius: 10px;
 }
 .zuopintu5{
 	width: 80%;
@@ -381,6 +417,8 @@ body{
 	margin: 0 auto;
 	background-size: 100% 100%;
 	background-image: url(../img/16.jpg);
+	box-shadow: 0px 0px 2px 2px #555;
+	border-radius: 10px;
 }
 .zuopintu6{
 	width: 80%;
@@ -388,6 +426,8 @@ body{
 	margin: 0 auto;
 	background-size: 100% 100%;
 	background-image: url(../img/17.jpg);
+	box-shadow: 0px 0px 2px 2px #555;
+	border-radius: 10px;
 }
 .zuopintu7{
 	width: 80%;
@@ -395,6 +435,8 @@ body{
 	margin: 0 auto;
 	background-size: 100% 100%;
 	background-image: url(../img/18.jpg);
+	box-shadow: 0px 0px 2px 2px #555;
+	border-radius: 10px;
 }
 .zuopintu8{
 	width: 80%;
@@ -402,6 +444,8 @@ body{
 	margin: 0 auto;
 	background-size: 100% 100%;
 	background-image: url(../img/19.jpg);
+	box-shadow: 0px 0px 2px 2px #555;
+	border-radius: 10px;
 }
 .lianxizi{
 	font-size: 20px;
@@ -424,6 +468,9 @@ body{
 	background-image: url(../img/30.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
+	position: relative;
+	top: 800px;
+	left: 0;
 }
 .fp-tableCell{
 	background-color: #000;

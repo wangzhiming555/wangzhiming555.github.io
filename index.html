@@ -96,6 +96,7 @@
           <div class="tuanduizi">网页作品</div>
           <p>在这段期间，我学到了很多的知识，先是Html css 然后是HTML5以及js、jQuery，通过学习这些知识，我们做了很多项目，有天猫PC端，移动端，凡客，小米，苹果的响应式页面等</p>
                <div class="td">
+                  <div class="zuopin1">
                     <div class="zuopin">
                     <a href="fanke/index.html">
                          <dl>凡客网页</dl>
@@ -108,6 +109,8 @@
                          <div class="zuopintu2"></div>
                          </a>
                     </div>
+                  </div>
+                  <div class="zuopin2">
                     <div class="zuopin">
                     <a href="tianmao/index.html">
                          <dl>天猫网页</dl>
@@ -120,8 +123,10 @@
                          <div class="zuopintu4"></div>
                          </a>
                     </div>
+                  </div>    
                </div>
                <div class="td">
+                  <div class="zuopin3">
                     <div class="zuopin">
                     <a href="jingdong/index.html">
                          <dl>京东网页</dl>
@@ -134,6 +139,8 @@
                          <div class="zuopintu6"></div>
                          </a>
                     </div>
+                  </div>
+                  <div class="zuopin4">  
                     <div class="zuopin">
                     <a href="yidong/index.html">
                          <dl>移动网页</dl>
@@ -146,6 +153,7 @@
                          <div class="zuopintu8"></div>
                          </a>
                     </div>
+                  </div>  
                </div>
      </div>
      
@@ -236,14 +244,70 @@
                
                if(index==6){
                     $('.next').css('transform','rotate(-90deg)').addClass('active');
+                    $('.tianxie').animate({top:0})
                }
                else{
                     $('.next').css('transform','rotate(90deg)').removeClass('active');
+               }
+               if(index==5){
+                $('.tuanduizi').animate({top:20},1000);
+                $('.tuandui p').animate({
+                  top:40},1000);
+
+                $('.xinqu').css('transform','rotate(360deg)',1000)
+               }
+               if(index==4){
+                $('.tuanduizi').animate({
+                  top:20
+                });
+                $('.tuandui p').animate({top:40});
+                $('.zuopin1').animate({left:0},1000);
+                $('.zuopin2').animate({left:'50%'},1000);
+                $('.zuopin3').animate({left:0},1000);
+                $('.zuopin4').animate({left:'50%'},1000);
+               }
+               if(index==3){
+                $('.kuang').animate({opacity:1});
+                $('.tuanduizi').animate({
+                  top:20
+                });
+                $('.tuandui p').animate({top:40});
+               }
+               if(index==2){
+                $('.geren p').animate({left:'0'});
+                $('.geren dl').animate({left:0})
                }
           },
           onLeave:function(index){
                if(index==6){
                     $('.next').css('transform','rotate(90deg');
+                    $('.tianxie').css('top',800);
+               }
+               if(index==5){
+                $('.tuanduizi').css('top','100%');
+                $('.tuandui p').css('top','100%');
+                $('.xinqu').css('transform','rotate(180deg)');
+               }
+               if(index==4){
+                $('.tuanduizi').animate({
+                  top:-20
+                });
+                $('.tuandui p').animate({top:-120});
+                $('.zuopin1').css('left',-1000);
+                $('.zuopin2').css('left',1500);
+                $('.zuopin3').css('left',-1000);
+                $('.zuopin4').css('left',1500);
+               }
+               if(index==3){
+                $('.kuang').css('opacity',0);
+                $('.tuanduizi').animate({
+                  top:-20
+                });
+                $('.tuandui p').animate({top:-120});
+               }
+               if(index==2){
+                $('.geren p').css('left',-1200);
+                $('.geren dl').css('left','100%');
                }
           },
 
