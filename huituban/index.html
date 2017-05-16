@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <title>Document</title>
+     <style type="text/css">
+     	canvas{
+     		background-color: #eee;
+     		float: left;
+     	}
+     	.box{
+     		width: 200px;
+     		height: 500px;
+     		float: left;
+     		background-color: #0085fe;
+     	}
+     	.kuang{
+     		width: 700px;
+     		height: 500px;
+     		margin: 0 auto;
+     	}
+     	#show,#style,.cl,.clear,.baocun,.qingkong{
+     		width: 180px;
+     		height: 50px;
+     		margin: 8px 10px;
+     		font-size: 20px;
+     		text-align: center;
+     		line-height: 50px;
+     		background-color: deeppink;
+     		cursor: pointer;
+     	}
+     	#col,#cuxi,#bs{
+     		width: 90px;
+     		height: 50px;
+     		font-size: 20px;
+     		text-align: center;
+     		line-height: 50px;
+     		background-color: #ff5722;
+     		margin: 8px 0 8px 10px;
+     		float: left;
+     	}
+     	#color,#width,#side{
+     		width: 84px;
+     		height: 46px;
+     		float: left;
+     		margin: 8px 0px;
+     	}
+     	#cuxi{
+     		background-color: #fffd22;
+     		font-size: 12px;
+     	}
+     	#style{
+     		background: #5fe91e;
+     	}
+        #bs{
+        	background-color: #2123f3;
+        }
+        .clear{
+        	background-color: red;
+        }
+        .baocun{
+        	background-color: lime;
+        }
+        .qingkong{
+        	background-color: orange;
+        }
+     </style>
+</head>
+<body>
+<div class="kuang">
+<div class="box">
+    <section>
+     <select id="show">
+        <option value="rect">矩形</option>
+        <option value="line">直线</option>
+        <option value="arc">圆形</option>
+        <option value="circleout">外接圆</option>
+        <option value="circlein">内切圆</option>
+        <option value="duo">多边形</option>
+        <option value="pen">铅笔</option>
+        <option value="eraser">橡皮擦</option>
+     </select>
+    </section>	
+    <section>
+        <label for="color" id="col">选择颜色</label>
+        <input type="color" id="color">
+    </section>
+    <section>
+    <label for="width" id='cuxi'>选择线条粗细</label>
+    <input type="number" id="width" >
+</section>
+<section>
+    <select name="" id="style">选择样式
+        <option value="stroke">线</option>
+        <option value="fill">填充</option>
+    </select>
+</section>
+<section>
+    <label for="side" id='bs'>边数</label>
+    <input type="number" id="side" value="3" min="3" max="12">
+</section>
+<div class="cl"></div>
+<div class="clear">撤销</div>
+<div class="baocun">保存</div>
+<div class="qingkong">清空</div>
+</div>
+<canvas width="500" height="500"></canvas>
+</div>
+</body>
+<script type="text/javascript" src='js/draw.js'></script>
+<script type="text/javascript">
+	var canvas=document.querySelector('canvas');
+	var cobj=canvas.getContext('2d');
+	var color=document.querySelector('#color');
+    var show=document.querySelector('#show');
+    var width=document.querySelector('#width');
+    var style=document.querySelector('#style');
+    var side=document.querySelector('#side');
+    var pen=document.querySelector('#pen');
+    var eraser=document.querySelector('#eraser');
+    var clear=document.querySelector('.clear');
+    var baocun=document.querySelector('.baocun');
+    var qingkong=document.querySelector('.qingkong');
+	var data=[];
+    var s='rect';
+    show.onchange=function () {
+        s=show.value;
+    }
+    var c='#000';
+    color.onchange=function () {
+        c=this.value;
+    }
+    var w='2';
+    width.onchange=function () {
+        w=this.value;
+    }
+    var st='stroke';
+    style.onchange=function () {
+        st=this.value;
+    }
+    var si='3';
+    side.onchange=function () {
+        si=this.value;
+    }
+	canvas.onmousedown=function (e) {
+        var ox=e.offsetX;
+        var oy=e.offsetY;
+        if(s=='pen'){
+            cobj.beginPath();
+            cobj.moveTo(ox,oy);
+        }
+        var draw=new Draw(cobj,{color:c,width:w,style:st});
+        canvas.onmousemove=function (e) {
+            var mx=e.offsetX;
+            var my=e.offsetY;
+            if(s!='eraser'){
+                cobj.clearRect(0,0,500,500);
+                if(data.length!=0){
+                    cobj.putImageData(data[data.length-1],0,0);
+                }
+            }
+
+
+            draw[s](ox,oy,mx,my,si);
+        }
+        document.onmouseup=function () {
+            data.push(cobj.getImageData(0,0,500,500));
+            canvas.onmousemove=null;
+            document.onmouseup=null;
+        }
+    }
+    clear.onclick=function () {
+        if(data.length!=0){
+            data.pop();
+            cobj.putImageData(data[data.length-1],0,0);
+        }
+        else{
+            return;
+        }
+    }
+    baocun.onclick=function () {
+        var r=canvas.toDataURL();
+        location.assign(r);
+    }
+    qingkong.onclick=function () {
+        data=[];
+        cobj.clearRect(0,0,500,500);
+    }
+</script>
+</html>

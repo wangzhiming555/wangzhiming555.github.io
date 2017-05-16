@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <title>Document</title>
+     <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+      <div class="chahua"></div>
+     <div class="kuangzi"></div>
+     <div class="fenshuban">
+
+          <div class="tishi">提示</div>
+          <div class="zuo">向左移动</div>
+          <div class="jian">键盘a</div>
+          <div class="zuo">向右移动</div>
+          <div class="jian">键盘d</div>
+          <div class="zuo">向上移动</div>
+          <div class="jian">键盘w</div>
+          <div class="zuo">向下移动</div>
+          <div class="jian">键盘s</div>
+          <div class="zuo">暂停/开始</div>
+          <div class="jian">空格键</div>
+          <div class="zuo">切换速度</div>
+          <div class="jian">1、2、3键</div>
+          <div class="zuo">重新开始</div>
+          <div class="jian">回车键</div>
+     	<div class="zuigaofen">最高分
+     		<span>0</span>
+     	</div>
+     	<div class="defen">本次得分
+     		<span>0</span>
+     	</div>
+     </div>
+     <div class="pause"></div>
+
+<script type="text/javascript" src='js/function1.js'></script>
+<script type="text/javascript" src='js/tcs.js'></script>
+<script type="text/javascript" src='js/animate.js'></script>
+<script type="text/javascript">
+     $(function(){
+        var pauses=document.querySelector('.pause');
+     var chahua=document.querySelector('.chahua');
+     pauses.onclick=function(){
+          animate(chahua,{height:0});
+          pauses.style.display='none';
+     }
+     })
+       
+</script>
+
+</body>
+
+</html>

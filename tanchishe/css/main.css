@@ -1,0 +1,140 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-image: url(../img/2.jpg);
+	background-repeat: no-repeat;
+}
+
+.kuangzi,.chahua{
+	width: 600px;
+	height: 600px;
+	border: 1px solid #000;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 auto;
+}
+.chahua{
+	background-image: url(../img/1.jpg);
+	background-size: 100%  100%;
+	background-repeat: no-repeat;
+	z-index: 5;
+}
+.gezi{
+	width: 30px;
+	height: 30px;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	float: left;
+	box-sizing: border-box;
+	background-image: url(../img/3.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.gezi:nth-child(20n){
+	border-right: 0;
+}
+.gezi:nth-child(380)~.gezi{
+	border-bottom: 0;
+
+}
+.she{
+	background-image: url(../img/2.png);
+}
+.shet{
+	background-image: url(../img/1.png);
+	transform: rotate(-90deg);
+	z-index: 3;
+}
+.food{
+	background-image: url(../img/3.jpg);
+	background-size: cover;
+}
+.fenshuban{
+	width: 300px;
+	height: 400px;
+	border:1px solid #000;
+	position: absolute;
+	left: 50px;
+	top: 100px;
+	background-image: url(../img/5.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.tishi{
+	width: 100%;
+	height: 50px;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 50px;
+	border-bottom: 1px solid #000;
+	float: left;
+}
+.zuo,.jian{
+	width: 149px;
+	height: 30px;
+	border-bottom: 1px solid #000;
+	border-right: 1px solid #000;
+	float: left;
+	font-size: 20px;
+	text-align: center;
+	line-height: 30px;
+}
+.jian{
+	border-right: 0px;
+}
+.zuigaofen,.defen{
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 28px;
+	text-align: center;
+	border-bottom: 1px solid #000;
+	/*float: left;*/
+}
+.zuigaofen span,.defen span{
+	font-size: 15px;
+	font-weight: bold;
+	color: orange;
+	line-height: 20px;
+	/*float: left;*/
+}
+.pause{
+	width: 120px;
+	height: 40px;
+	background-color: green;
+	font-size: 30px;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin:auto;
+	z-index: 6;
+	background-image: url(../img/6.png) ;
+	background-size:100% 100%;
+	background-repeat: no-repeat ;
+	border-radius: 10px;
+}
+.heipin{
+	width: 600px;
+	height: 600px;
+	background-color: #000;
+	opacity: 0.6;
+	font-size: 50px;
+	text-align: center;
+	line-height: 600px;
+	font-weight: bold;
+	color: #fff;
+}

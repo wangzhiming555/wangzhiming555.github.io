@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .first {
+            width: 120px;
+            height: auto;
+            background-color: #222;
+        }
+        .first li{
+            width: 120px;
+            overflow: hidden;
+        }
+        .first li a{
+            width: 120px;
+            height: 30px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+        }
+        .second{
+            overflow: hidden;
+            display: none;
+        }
+        .second li{
+            width: 120px;
+            height: 30px;
+            background-color: #222;
+            font-size: 20px;
+            color: #aaa;
+            text-align: left;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        *{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        .first>li>a.active{
+            background-color: red;
+        }
+        .second li.active{
+            width: 115px;
+            border-left: 5px solid #fff;
+            color: #fff;
+        }
+        .container{
+            width: 120px;
+            height:100%;
+            background-color: #222222;
+            position: fixed;
+            left:0;
+            top:0;
+        }
+        .scroll{
+            height: 100%;
+            width: 1px;
+            background-color: #cccbba;
+            position: absolute;
+            right: 10px;
+            top:0;
+            display: none;
+        }
+        .scroll .control{
+            width: 15px;
+            height:15px;
+            background-color: #0084fe;
+            border-radius: 50%;
+            position: absolute;
+            top:0;
+            left:-7px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <ul class="first">
+        <li>
+        <a href="#">核心
+        </a>
+        <ul class="second">
+            <li>jQuery(selector|context)</li>
+            <li>jQuery(html,[ownerDocument])</li>
+            <li>jQuery(callback)</li>
+            <li>jQuery.holdReady(hold) </li>
+            <li>each(callback)</li>
+            <li>size()</li>
+            <li>length</li>
+            <li>selector</li>
+            <li>context</li>
+            <li>get([index])</li>
+            <li>context</li>
+            <li>index([selector|element])</li>
+            <li>data([key],[value])</li>
+            <li>removeData([name|list])</li>
+            <li>jQuery.data(element,[key],[value])</li>
+            <li>queue(element,[queueName])</li>
+            <li>dequeue([queueName])</li>
+            <li>clearQueue([queueName])</li>
+            <li>jQuery.fn.extend(object)</li>
+            <li>jQuery.extend(object)</li>
+            <li>jQuery.noConflict([extreme])</li>
+        </ul>
+        </li>
+        <li>
+            <a href="#">选择器
+            </a>
+            <ul class="second">
+                <li>data([key],[value])</li>
+                <li>removeData([name|list])</li>
+                <li>*</li>
+                <li>selector1,selector2,selectorN</li>
+                <li>ancestor descendant</li>
+                <li>parent > child</li>
+                <li>prev + next</li>
+                <li>prev ~ siblings</li>
+                <li>:first</li>
+                <li>:not(selector)</li>
+                <li>:even</li>
+                <li>:odd</li>
+                <li>:eq(index)</li>
+                <li>:gt(index)</li>
+                <li>:lang(language)</li>
+                <li>:last()</li>
+                <li>:lt(index)</li>
+                <li>:header</li>
+                <li>:animated</li>
+                <li>:focus</li>
+                <li>:root</li>
+                <li>:target</li>
+                <li>:contains(text)</li>
+                <li>:empty</li>
+                <li>:has(selector)</li>
+                <li>:parent</li>
+                <li>:hidden</li>
+                <li>:visible</li>
+                <li>[attribute]</li>
+                <li>[attribute=value]</li>
+                <li>[attribute!=value]</li>
+                <li>[attribute^=value]</li>
+                <li>[attribute$=value]</li>
+                <li>[attribute*=value]</li>
+                <li>[selector1][selector2][selectorN]</li>
+                <li>:first-child</li>
+                <li>:first-of-type</li>
+                <li>:last-child</li>
+                <li>:last-of-type</li>
+                <li>:nth-child</li>
+                <li>:nth-last-child(n|even|odd|formula)</li>
+                <li>返回值:jQuery:nth-last-of-type(n|even|odd|formula)</li>
+                <li>:nth-of-type(n|even|odd|formula)</li>
+                <li>:only-child</li>
+                <li>:only-of-type</li>
+                <li>:input</li>
+                <li>:text</li>
+                <li>:password</li>
+                <li>:radio</li>
+                <li>:checkbox</li>
+                <li>:submit</li>
+                <li>:image</li>
+                <li>:reset</li>
+                <li>:button</li>
+                <li>:file</li>
+                <li>:enabled</li>
+                <li>:disabled</li>
+                <li>:checked</li>
+                <li>:selected</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">AJAX
+            </a>
+            <ul class="second">
+                <li>jQuery.ajax(url,[settings])</li>
+                <li>load(url, [data], [callback])</li>
+                <li>jQuery.get(url, [data], [callback], [type])</li>
+                <li>jQuery.getJSON(url, [data], [callback])</li>
+                <li>jQuery.getScript(url, [callback])</li>
+                <li>jQuery.post(url, [data], [callback], [type])</li>
+                <li>ajaxComplete(callback)</li>
+                <li>ajaxError(callback)</li>
+                <li>ajaxSend(callback)</li>
+                <li>ajaxStart(callback)</li>
+                <li>ajaxStop(callback)</li>
+                <li>ajaxSuccess(callback)</li>
+                <li>jQuery.ajaxPrefilter( [dataTypes] , handler(options, originalOptions, jqXHR) )</li>
+                <li>jQuery.ajaxSetup([options])</li>
+                <li>serialize()</li>
+                <li>serializeArray()</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">属性
+            </a>
+            <ul class="second">
+                <li>attr(name|properties|key,value|fn)</li>
+                <li>removeAttr(name)</li>
+                <li>prop(name|properties|key,value|fn)</li>
+                <li>removeProp(name) </li>
+                <li>addClass(class|fn)</li>
+                <li>removeClass([class|fn])</li>
+                <li>toggleClass(class|fn[,sw])</li>
+                <li>html([val|fn])</li>
+                <li>text([val|fn])</li>
+                <li>val([val|fn|arr])</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">CSS
+            </a>
+            <ul class="second">
+                <li>css(name|pro|[,val|fn])</li>
+                <li>ObjectjQuery.cssHooks</li>
+                <li>offset([coordinates])</li>
+                <li>position()</li>
+                <li>scrollTop([val])</li>
+                <li>scrollLeft([val])</li>
+                <li>height([val|fn])</li>
+                <li>width([val|fn])</li>
+                <li>innerHeight()</li>
+                <li>innerWidth()</li>
+                <li>outerHeight([options])</li>
+                <li>outerWidth([options])</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">文档处理
+            </a>
+            <ul class="second">
+                <li>append(content|fn)</li>
+                <li>appendTo(content)</li>
+                <li>prepend(content)</li>
+                <li>prependTo(content)</li>
+                <li>after(content|fn)</li>
+                <li>before(content|fn)</li>
+                <li>insertAfter(content)</li>
+                <li>insertBefore(content)</li>
+                <li>wrap(html|element|fn)</li>
+                <li>unwrap()</li>
+                <li>wrapAll(html|ele)</li>
+                <li>wrapInner(htm|element|fnl)</li>
+                <li>replaceWith(content|fn)</li>
+                <li>replaceAll(selector)</li>
+                <li>empty()</li>
+                <li>remove([expr])</li>
+                <li>remove([expr])</li>
+                <li>clone([Even[,deepEven]])</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">筛选
+            </a>
+            <ul class="second">
+                <li>eq(index|-index)</li>
+                <li>first()</li>
+                <li>last()</li>
+                <li>hasClass(class) </li>
+                <li>filter(expr|obj|ele|fn)</li>
+                <li>is(expr|obj|ele|fn)</li>
+                <li>map(callback)</li>
+                <li>has(expr|ele)</li>
+                <li>not(expr|ele|fn)</li>
+                <li>slice(start, [end])</li>
+                <li>children([expr])</li>
+                <li>closest(expr|object|element)</li>
+                <li>find(expr|obj|ele)</li>
+                <li>next([expr])</li>
+                <li>nextAll([expr])</li>
+                <li>nextUntil([exp|ele][,fil])</li>
+                <li>offsetParent()</li>
+                <li>parent([expr])</li>
+                <li>parents([expr])</li>
+                <li>parentsUntil([expr|element][,filter])</li>
+                <li>prev([expr])</li>
+                <li>prevAll([expr])</li>
+                <li>prevUntil([exp|ele][,fil])</li>
+                <li>siblings([expr])</li>
+                <li>add(expr|ele|html|obj[,con])</li>
+                <li>andSelf()</li>
+                <li>addBack()</li>
+                <li>contents()</li>
+                <li>end()</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">事件
+            </a>
+            <ul class="second">
+                <li>ready(fn)</li>
+                <li>on(events,[selector],[data],fn)</li>
+                <li>off(events,[selector],[fn])</li>
+                <li>bind(type,[data],fn)</li>
+                <li>one(type,[data],fn)</li>
+                <li>trigger(type,[data])</li>
+                <li>triggerHandler(type, [data])</li>
+                <li>unbind(type,[data|fn]])</li>
+                <li>live(type, [data], fn)</li>
+                <li>die(type, [fn])</li>
+                <li>delegate(selector,[type],[data],fn)</li>
+                <li>undelegate([selector,[type],fn])</li>
+                <li>hover([over,]out)</li>
+                <li>toggle([speed],[easing],[fn])</li>
+                <li>blur([[data],fn])</li>
+                <li>change([[data],fn])</li>
+                <li>click([[data],fn])</li>
+                <li>dblclick([[data],fn])</li>
+                <li>error([[data],fn])</li>
+                <li>focus([[data],fn])</li>
+                <li>focusin([data],fn)</li>
+                <li>focusout([data],fn)</li>
+                <li>keydown([[data],fn])</li>
+                <li>keypress([[data],fn])</li>
+                <li>keyup([[data],fn])</li>
+                <li>mousedown([[data],fn])</li>
+                <li>mouseenter([[data],fn])</li>
+                <li>mouseleave([[data],fn])</li>
+                <li>mousemove([[data],fn])</li>
+                <li>mouseout([[data],fn])</li>
+                <li>mouseover([[data],fn])</li>
+                <li>mouseup([[data],fn])</li>
+                <li>resize([[data],fn])</li>
+                <li>scroll([[data],fn])</li>
+                <li>select([[data],fn])</li>
+                <li>submit([[data],fn])</li>
+                <li>unload([[data],fn])</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">效果
+            </a>
+            <ul class="second">
+                <li>show([speed,[easing],[fn]])</li>
+                <li>hide([speed,[easing],[fn]])</li>
+                <li>slideDown([speed],[easing],[fn])</li>
+                <li>slideUp([speed,[easing],[fn]])</li>
+                <li>fadeIn([speed],[easing],[fn])</li>
+                <li>fadeOut([speed],[easing],[fn])</li>
+                <li>fadeTo([[speed],opacity,[easing],[fn]])</li>
+                <li>fadeToggle([speed,[easing],[fn]])</li>
+                <li>animate(params,[speed],[easing],[fn])</li>
+                <li>stop([clearQueue],[jumpToEnd])</li>
+                <li>delay(duration,[queueName])</li>
+                <li>finish( [queue ] )</li>
+                <li>jQuery.fx.off</li>
+                <li>jQuery.fx.interval</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">工具
+            </a>
+            <ul class="second">
+                <li>jQuery.support</li>
+                <li>jQuery.browser</li>
+                <li>jQuery.browser.version</li>
+                <li>jQuery.boxModel </li>
+                <li>jQuery.each(object, [callback])</li>
+                <li>jQuery.extend([deep], target, object1, [objectN])</li>
+                <li>jQuery.grep(array, callback, [invert])</li>
+                <li>jQuery.sub() </li>
+                <li>jQuery.when(deferreds)</li>
+                <li>jQuery.makeArray(obj)</li>
+                <li>jQuery.map(arr|obj,callback)</li>
+                <li>jQuery.inArray(value,array,[fromIndex])</li>
+                <li>jQuery.toArray()</li>
+                <li>jQuery.merge(first,second)</li>
+                <li>jQuery.unique(array)</li>
+                <li>jQuery.parseJSON(json)</li>
+                <li>jQuery.parseXML(data)</li>
+                <li>jQuery.noop</li>
+                <li>jQuery.proxy(function,context)</li>
+                <li>jQuery.contains(container,contained)</li>
+                <li>jQuery.type(obj)</li>
+                <li>jQuery.isArray(obj)</li>
+                <li>jQuery.isFunction(obj)</li>
+                <li>jQuery.isEmptyObject(obj)</li>
+                <li>jQuery.isPlainObject(obj)</li>
+                <li>jQuery.isWindow(obj)</li>
+                <li>jQuery.isNumeric(value)</li>
+                <li>jQuery.trim(str)</li>
+                <li>jQuery.param(obj,[traditional])</li>
+                <li>jQuery.error(message)</li>
+                <li>$.fn.jquery</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">事件对象
+            </a>
+            <ul class="second">
+                <li>event.currentTarget</li>
+                <li>event.data</li>
+                <li>event.delegateTarget</li>
+                <li>event.isDefaultPrevented()</li>
+                <li>context</li>
+                <li>event.isImmediatePropagationStopped()</li>
+                <li>event.isPropagationStopped()</li>
+                <li>event.namespace</li>
+                <li>event.pageX</li>
+                <li>event.pageX</li>
+                <li>event.preventDefault()</li>
+                <li>event.relatedTarget</li>
+                <li>event.result</li>
+                <li>event.stopImmediatePropagation()</li>
+                <li>event.stopPropagation()</li>
+                <li>event.target</li>
+                <li>event.timeStamp</li>
+                <li>event.type</li>
+                <li>event.which</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">延迟对象
+            </a>
+            <ul class="second">
+                <li>deferred.done(doneCallbacks[,doneCallbacks])</li>
+                <li>deferred.isRejected()</li>
+                <li>deferred.fail(failCallbacks[,failCallbacks])</li>
+                <li>deferred.isResolved()</li>
+                <li>deferred.reject(args)</li>
+                <li>deferred.rejectWith(context,[args])</li>
+                <li>deferred.resolve(args)</li>
+                <li>deferred.resolveWith(context,[args])</li>
+                <li>deferred.then(doneFilter [, failFilter ] [, progressFilter ])</li>
+                <li>deferred.promise([type],[target])</li>
+                <li>deferred.pipe([doneFilter],[failFilter],[progressFilter])</li>
+                <li>deferred.always(alwaysCallbacks,[alwaysCallbacks])</li>
+                <li>deferred.notify(args)</li>
+                <li>deferred.notifyWith(context,[args])</li>
+                <li>deferred.progress(progressCallbacks)</li>
+                <li>deferred.state()</li>
+            </ul>
+        </li><li>
+        <a href="#">回调函数
+        </a>
+        <ul class="second">
+            <li>callbacks.add(callbacks)</li>
+            <li>callbacks.disable()</li>
+            <li>callbacks.empty()</li>
+            <li>callbacks.fire(arguments) </li>
+            <li>callbacks.fired()</li>
+            <li>callbacks.fireWith([context][,args])</li>
+            <li>callbacks.has(callback)</li>
+            <li>callbacks.lock()</li>
+            <li>callbacks.locked()</li>
+            <li>callbacks.remove(callbacks)</li>
+            <li>jQuery.callbacks(flags)</li>
+        </ul>
+    </li>
+        <li>
+            <a href="#">其它
+            </a>
+            <ul class="second">
+                <li>正则表达式</li>
+                <li>HTML5速查表</li>
+                <li>源码下载</li>
+            </ul>
+    </ul>
+    <div class="scroll">
+        <div class="control"></div>
+    </div>
+   </div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    var mt;
+    var  cha;
+    $('.first>li>a').click(function () {
+        $('.first>li>a').not(this).removeClass('active').next().slideUp();
+        $(this).toggleClass('active');
+        $(this).next().slideToggle();
+        console.log($('.first').height());
+        if($('.first').height()>$('.container').height()){
+            $('.scroll').hide();
+           cha=$('.first').height()-$('.container').height();
+
+        }
+        else{
+            $('.scroll').show();
+            $('.first').css('margin-top',0);
+            moveY=0;
+        }
+    }).hover(function () {
+        $(this).css({background:'red',color:'#fff'});
+    },function () {
+        $(this).css({background:'',color:''});
+    });
+    $('.second li').click(function () {
+        $(this).css({
+            width:115,
+            borderLeft:'5px solid #DEDEDE'
+        }).siblings().css({
+            width:120,
+            border:0
+        })
+    }).hover(function () {
+        $(this).addClass('active');
+    },function () {
+        $(this).removeClass('active');
+    });
+    var my=0;moveY=0;
+    $('.control').mousedown(function (e) {
+        e.preventDefault();
+        var sy=e.clientY;
+        $(document).on('mousemove',move);
+        var maxTop=$('.container').height()-$('.control').height();
+        function move(e) {
+            var ny=e.clientY;
+            my=ny-sy;
+            if(my+moveY<0){
+                my=-moveY;
+            }
+            if((my+moveY)>maxTop){
+                my=maxTop-moveY;
+            }
+            mt=(my+moveY)/maxTop*cha;
+            $('.first').css('marginTop',-mt);
+            $('.control').css('top',my+moveY);
+        }
+        $(document).on('mouseup',up);
+        function up(e) {
+            moveY+=my;
+            $(document).off('mousemove',move);
+            $(document).off('mouseup',up);
+        }
+    })
+</script>
+</html>

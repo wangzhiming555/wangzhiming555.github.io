@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .scence{
+        width: 500px;
+        height: 500px;
+        border-left: 1px solid #222;
+        border-top: 1px solid #222;
+        margin: 8px auto;
+    }
+    .block{
+        width: 49px;
+        height: 49px;
+        background-image: url(1.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        float: left;
+        border-bottom: 1px solid #222222;
+        border-right: 1px solid #222222;
+    }
+    .control{
+        width: 100px;
+        height: 501px;
+        position: absolute;
+        top: 8px;
+        left: 323px;
+        background-color: #fffd22;
+        background-image: url(4.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: -60px 0;
+    }
+    .show{
+        background-image: url("1.jpg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    .num{
+        font-size: 20px;
+        text-align: center;
+        color: #222222;
+        line-height:50px;
+        background-color: white;
+    }
+    .flag{
+        background-image: url("2.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    .flagnum,.cx,.nd{
+        background-color: #5fe91e;
+        border-radius: 5px;
+        color: #ff5722;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 15px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .cx{
+        background-image: url(3.png);background-size: cover;
+        background-repeat: no-repeat;
+        background-position: -5px 0;
+    }
+    .nd{
+        background-image: url(4.png);background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .guanka{
+        width: 100px;
+        height: 90px;
+        background-color: deeppink;
+        border-radius: 10px;
+        position: absolute;
+        top:130px;
+        left:0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #000;
+        text-align: center;
+        line-height: 30px;
+        overflow: hidden;
+        display: none;
+    }
+    .guanka1,.guanka2,.guanka3{
+        width:98px;
+        height: 28px;
+        border: 1px solid #000;
+    }
+    .guanka1:hover{
+        color: white;
+    }
+    .guanka2:hover{
+        color: white;
+    }
+    .guanka3:hover{
+        color: white;
+    }
+    time,times{
+        width: 100px;
+        height: 30px;
+        position: absolute;
+        left:0;
+        top:300px;
+        border-radius: 10px;
+        background-color: lime;
+        font-size: 20px;
+        text-align: center;
+        line-height: 30px;
+        color: red;
+    }
+    times{
+        top:250px;
+        color: #000;
+    }
+    .paim{
+        width: 100px;
+        height:30px;
+        background-color: #5fe91e;
+        position: absolute;
+        left: 0;
+        top:350px;
+        border-radius: 10px;
+        font-size: 15px;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+        background-image: url(5.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .zhezhao{
+        width: 612px;
+        height: 501px;
+        background-color: #cccbba;
+        position: absolute;
+        z-index:5;
+        left: 323px;
+        top:8px;
+        background-image: url(3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .open{
+        width:100px;
+        height:100px;
+        position: absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        right:0;
+        margin:auto;
+        border-radius: 50%;
+        background-color: aqua;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        line-height:100px;
+        color: red;
+        cursor: pointer;
+    }
+    .paihang{
+        width: 270px;
+        height: 150px;
+        border:1px solid #000;
+        position: absolute;
+        left: 1000px;
+        top:100px;
+        display: none;
+        transition: all 1s linear;
+        /*box-sizing: border-box;*/
+    }
+    .mingci,.sj,.xm,.diyi,.diyiname,.diyiscor,.dier,.diername,.dierscor,.disan,.disanname,.disanscor{
+        width: 88px;
+        height: 28px;
+        border: 1px solid #000;
+        float: left;
+        background-color: lime;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        line-height:28px;
+        color: #222222;
+        background-image: url(6.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .ph{
+        width: 270px;
+        height:30px;
+        background-color: #0085fe;
+        font-size: 20px;
+        text-align: center;
+        line-height:30px;
+        color: #000;
+        float: left;
+        background-image: url(7.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .heipin{
+        width: 502px;
+        height:502px;
+        background-color: #000;
+        position: absolute;
+        z-index: 3;
+        left:432px;
+        top: 8px;
+        font-size: 50px;
+        font-weight: bold;
+        font-family: 微软雅黑;
+        text-align: center;
+        line-height: 500px;
+        color: #fff;
+        opacity: 0.5;
+        display: none;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    body{
+        background-image: url(2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<body>
+<div class="scence">
+
+</div>
+<div class="heipin">游戏失败</div>
+<div class="zhezhao">
+    <div class="open">play</div>
+</div>
+<div class="control">
+    <div class="flagnum">flag  10</div>
+    <div class="cx"></div>
+    <div class="nd">
+        <div class="guanka">
+            <div class="guanka1">初级</div>
+            <div class="guanka2">中级</div>
+            <div class="guanka3">高级</div>
+        </div>
+    </div>
+    <div class="paim"></div>
+    <times>剩余时间</times>
+    <time>120</time>
+</div>
+<div class="paihang">
+    <div class="ph">排行榜</div>
+    <div class="mingci">名次</div>
+    <div class="xm">姓名</div>
+    <div class="sj">得分</div>
+    <div class="diyi">第一名</div>
+    <div class="diyiname"></div>
+    <div class="diyiscor">0</div>
+    <div class="dier">第二名</div>
+    <div class="diername"></div>
+    <div class="dierscor">0</div>
+    <div class="disan">第三名</div>
+    <div class="disanname"></div>
+    <div class="disanscor">0</div>
+</div>
+</body>
+
+<script src="js/jquery.js"></script>
+<script>
+
+    $(document).ready(function () {
+        var scor=0;
+        var t;
+        var t1;
+        $('.paim').hover(function () {
+            $('.paihang').css('display', 'block');
+        },function () {
+                $('.paihang').css('display','none');
+        })
+        var bestscor=localStorage.bestscor?JSON.parse(localStorage.bestscor):[];
+        $('.open').click(function () {
+            $('.open').animate({opacity:0});
+            $('.zhezhao').animate({height:0});
+            t=setInterval(move,1000);
+            t1=setTimeout(function () {
+                clearInterval(t);
+                $('.heipin').css('display','block');
+            },120000);
+//            $('.paihang').css('display','block');
+        });
+        function move() {
+            var a=$('time').html();
+            a--;
+            $('time').html(a);
+        }
+        $('.nd').click(function () {
+            $('.guanka').css('display','block');
+        });
+        var num=10;
+        var nums=0.9;
+        var num1=10;
+        function creatyx() {
+            do{
+                $('.scence').empty();
+                for(var i=0;i<10;i++){
+                    for(var j=0;j<10;j++){
+                        var islei=Math.random()>nums;
+                        $('<div>').addClass(function () {
+                            if(islei){
+                                return 'block lei';
+                            }
+                            else{
+                                return 'block'
+                            }
+                        })
+                            .attr('id',i+'-'+j)
+                            .data('pos',{x:i,y:j})
+                            .mousedown(mousedownEvent)
+                            .appendTo('.scence')
+                    }
+                }
+            }while($('.lei').length!=num);
+        }
+        creatyx();
+        $('.guanka1').click(function () {
+            num=10;
+            num1=10;
+            nums=0.9;
+            creatyx();
+            cz();
+            $('.guanka1').css('background','blue').siblings().css('background','deeppink');
+            $('.flagnum').html('flag:'+num);
+        });
+        $('.guanka2').click(function () {
+            num=15;
+            num1=15;
+            nums=0.85;
+            creatyx();
+            cz();
+            $('.guanka2').css('background','blue').siblings().css('background','deeppink');
+            $('.flagnum').html('flag:'+num);
+        });
+        $('.guanka3').click(function () {
+            num=20;
+            num1=20;
+            nums=0.8;
+            creatyx();
+            cz();
+            $('.guanka3').css('background','blue').siblings().css('background','deeppink');
+            $('.flagnum').html('flag:'+num);
+        });
+        $('.cx').click(function () {
+            num=10;
+            num1=10;
+            nums=0.9;
+            creatyx();
+            cz();
+            $('.guanka1').css('background','blue').siblings().css('background','deeppink');
+            $('.flagnum').html('flag:'+num);
+        });
+        function cz() {
+            clearInterval(t);
+            $('time').html(120);
+            t=setInterval(move,1000);
+            t1=setTimeout(function () {
+                clearInterval(t);
+                $('.heipin').css('display','block');;
+            },120000);
+            $('.heipin').css('display','none');
+        }
+        function paiming() {
+            if(bestscor.length<3||bestscor.length>=3&&scor>bestscor[2].scor){
+                var name=prompt('请输入您的名字');
+                bestscor.push({name,scor:scor});
+                bestscor.sort(function (a,b) {
+                    if(a.scor>b.scor){
+                        return -1;
+                    }
+                    else{
+                        return 1;
+                    }
+                });
+                localStorage.bestscor=JSON.stringify(bestscor);
+            }
+        }
+        function getdata() {
+            var data=bestscor;
+            $('.diyiname').html(data[0].name);
+            $('.diyiscor').html(data[0].scor);
+            if(!data[1]){
+                $('.diername').html('');
+                $('.dierscor').html('');
+            }
+            else{
+                $('.diername').html(data[1].name);
+                $('.dierscor').html(data[1].scor);
+            }
+            if(!data[2]){
+                $('.disanname').html('');
+                $('.disanscor').html('');
+            }
+            else{
+                $('.disanname').html(data[2].name);
+                $('.disanscor').html(data[2].scor);
+            }
+        }
+        function mousedownEvent(e) {
+            if(e.which==1){
+                leftclick.call(this);
+            }else{
+                rightclick.call(this);
+            }
+        }
+        function leftclick() {
+            if($(this).hasClass('flag')){
+                return;
+            }
+            if($(this).hasClass('lei')){
+                $('.lei').addClass('show');
+                $('.heipin').css('display','block');
+                clearInterval(t);
+                paiming();
+                getdata();
+            }else{
+                var pos=$(this).data('pos');
+                $(this).addClass('num');
+                var n=0;
+                $(this).css('background','#eee');
+                for(var i=pos.x-1;i<=pos.x+1;i++) {
+                    for (var j = pos.y - 1; j <= pos.y + 1; j++) {
+                        if ($('#' + i + '-' + j).hasClass('lei')) {
+                            n++;
+                        }
+                    }
+                }
+                $(this).html(n);
+
+                if(n==0){
+                    for(var i=pos.x-1;i<=pos.x+1;i++){
+                        for(var j=pos.y-1;j<=pos.y+1;j++){
+                            var obj=$('#'+i+'-'+j);
+                            if(obj.length==1&&!obj.hasClass('num')){
+                                leftclick.call(obj[0]);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        function rightclick() {
+            if($(this).hasClass('num')){
+                return;
+            }
+            if($(this).hasClass('flag')){
+                $(this).removeClass('flag');
+                num++;
+                scor-=5;
+            }else{
+                $(this).addClass('flag');
+                num--;
+                scor+=5;
+                if(num<0){
+                    num++;
+                    $('.heipin').css('display','block');
+                }
+                if(num==0){
+                    if($('.flag').filter('.lei').length==num1){
+                        $('.heipin').css('display','block').html('扫雷成功');
+                        clearInterval(t);
+                        paiming();
+                        getdata();
+                    }
+                    else{
+                        $('.heipin').css('display','block');
+                    }
+                }
+            }
+            $('.flagnum').html('flag:'+num);
+        }
+        $(document).on('contextmenu',function (e) {
+            e.preventDefault();
+        })
+    })
+</script>
+</html>
