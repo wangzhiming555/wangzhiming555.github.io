@@ -222,6 +222,7 @@ body{
 	position: relative;
     overflow: hidden;
     top: 20px;
+    opacity: 0;
 }
 .suoyoucx{
 	width: 1350px;
@@ -326,6 +327,7 @@ body{
 	margin: 0 auto;
 	background-image: url(../img/8.jpg);
 	background-size: 100% 100%;
+	border-radius: 20px;
 }
 .xinqutu2{
 	width: 80%;
@@ -333,6 +335,7 @@ body{
 	margin: 0 auto;
 	background-image: url(../img/9.jpg);
 	background-size: 100% 100%;
+	border-radius: 20px;
 }
 .xinqutu3{
 	width: 80%;
@@ -340,6 +343,7 @@ body{
 	margin: 0 auto;
 	background-image: url(../img/10.jpg);
 	background-size: 100% 100%;
+	border-radius: 20px;
 }
 .xinqu dl{
 	font-size: 20px;

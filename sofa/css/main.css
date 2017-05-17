@@ -61,12 +61,12 @@
 	float: left;
 }
 @font-face {
-  font-family: '../font_8108mr54ypkfbt9/iconfont';
-  src: url('../font_8108mr54ypkfbt9/iconfont.eot');
-  src: url('../font_8108mr54ypkfbt9/iconfont.eot?#iefix') format('embedded-opentype'),
-  url('../font_8108mr54ypkfbt9/iconfont.woff') format('woff'),
-  url('../font_8108mr54ypkfbt9/iconfont.ttf') format('truetype'),
-  url('../font_8108mr54ypkfbt9/iconfont.svg#iconfont') format('svg');
+  font-family: 'iconfont';
+  src: url('../font_dzogexdst3srlik9/iconfont.eot');
+  src: url('../font_dzogexdst3srlik9/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../font_dzogexdst3srlik9/iconfont.woff') format('woff'),
+  url('../font_dzogexdst3srlik9/iconfont.ttf') format('truetype'),
+  url('../font_dzogexdst3srlik9/iconfont.svg#iconfont') format('svg');
 }
 .iconfont{
   font-family:"iconfont" !important;
@@ -88,6 +88,7 @@
 }
 .sst:hover{
 	background-color: #ffb366;
+	color: #fff;
 }
 .shafawang{
 	width: 100%;

@@ -82,7 +82,7 @@ header{
     border:1px solid #e0e0e0;	 
 }
 @font-face {
-  font-family: '../font_8108mr54ypkfbt9/iconfont';
+  font-family: 'iconfont';
   src: url('../font_8108mr54ypkfbt9/iconfont.eot');
   src: url('../font_8108mr54ypkfbt9/iconfont.eot?#iefix') format('embedded-opentype'),
   url('../font_8108mr54ypkfbt9/iconfont.woff') format('woff'),
@@ -104,13 +104,14 @@ header{
 	top:1px;
 	border:1px solid #ccc;
 	cursor: pointer;
-	font-size: 30px;
+	font-size: 20px;
 	text-align: center;
 	line-height: 48px;
 }
 
 .sousuoBtn:hover{
 	background-color:#ff6700; 
+	color: #fff;
 }
 .bannerArea{
 	height: 460px;
@@ -772,7 +773,7 @@ header{
 	border-right: 1px solid #aaa;
 }
 .aa2:nth-child(3){
-	border-right: 0px solid #aaa;
+	border-right: 0;
 }
 .zttb{
 	width: 74px;
@@ -780,6 +781,7 @@ header{
 	font-size: 30px;
 	text-align: center;
 	line-height: 50px;
+	color: #ddd;
 }
 .zttb:hover{
 	color: #fff;

@@ -6,19 +6,35 @@
 	right: 0;
 	background-color: #000;
 }
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font_dzogexdst3srlik9/iconfont.eot');
+  src: url('../font_dzogexdst3srlik9/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../font_dzogexdst3srlik9/iconfont.woff') format('woff'),
+  url('../font_dzogexdst3srlik9/iconfont.ttf') format('truetype'),
+  url('../font_dzogexdst3srlik9/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
 .wodetequan{
 	width: 35px;
 	height: 35px;
-	background-color: red;
+	background-color: #000;
 	margin-top: 100px;
-	background-image: url(../img/243.jpg);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
 	cursor: pointer;
 	position: absolute;
+	font-size: 20px;
+    text-align: center;
+    line-height: 35px;
+    color: #ddd;
 }
 .wodetequan:hover{
-	background-color: red;
+	background-color: #c40000;
 }
 .wdtqcx{
 	width: 100px;
@@ -54,7 +70,7 @@
 	text-align: center;
 }
 .yougouwuche:hover{
-	background-color: red;
+	background-color:#c40000;
 }
 .ygwc{
 	width: 35px;
@@ -63,7 +79,7 @@
 	top: 135px;
 }
 .ygwc:hover{
-	background-color: red;
+	background-color: #c40000;
 }
 .wdzc{
 	width: 35px;
@@ -78,7 +94,7 @@
 	cursor: pointer;
 }
 .wdzc:hover{
-	background-color: red;
+	background-color: #c40000;
 }
 .wdzccx{
 	width: 100px;
@@ -104,17 +120,17 @@
 .wodeguanzhu{
 	width: 35px;
 	height: 35px;
-	background-color: red;
 	margin-top: 100px;
-	background-image: url(../img/244.jpg);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
+	font-size: 20px;
+	text-align: center;
+	line-height: 35px;
+	color: #ccc;
 	cursor: pointer;
 	position: absolute;
     top: 170px;
 }
 .wodeguanzhu:hover{
-	background-color: red;
+	background-color: #c40000;
 }
 .wdgzcx{
 	width: 100px;
@@ -138,17 +154,16 @@
 .wodesc{
 	width: 35px;
 	height: 35px;
-	background-color: red;
-	margin-top: 100px;
-	background-image: url(../img/245.jpg);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
+	margin-top: 100px;font-size: 20px;
+	text-align: center;
+	line-height: 35px;
+	color: #ccc;
 	cursor: pointer;
 	position: absolute;
     top: 205px;
 }
 .wodesc:hover{
-	background-color: red;
+	background-color: #c40000;
 }
 .wdsccx{
 	width: 100px;
@@ -172,17 +187,17 @@
 .wodekg{
 	width: 35px;
 	height: 35px;
-	background-color: red;
-	margin-top: 100px;
-	background-image: url(../img/246.jpg);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
+	margin-top: 100px;font-size: 20px;
+	text-align: center;
+	line-height: 35px;
+	color: #ccc;
+	font-size: 20px;
 	cursor: pointer;
 	position: absolute;
     top: 240px;
 }
 .wodekg:hover{
-	background-color: red;
+	background-color: #c40000;
 }
 .wdkgcx{
 	width: 100px;
@@ -206,17 +221,17 @@
 .wodefh{
 	width: 35px;
 	height: 35px;
-	background-color: red;
 	margin-top: 100px;
-	background-image: url(../img/247.jpg);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
+	font-size: 20px;
+	text-align: center;
+	line-height: 35px;
+	color: #ccc;
 	cursor: pointer;
 	position: absolute;
     top: 275px;
 }
 .wodefh:hover{
-	background-color: red;
+	background-color: #c40000;
 }
 .wdfhcx{
 	width: 100px;
@@ -251,7 +266,7 @@
     color: #eee;
 }
 .wodedb:hover{
-	background-color: red;
+	background-color: #c40000;
 }
 .wddbcx{
 	width: 100px;
@@ -280,16 +295,13 @@
 	cursor: pointer;
 	position: absolute;
     top: 410px;
-    font-size: 12px;
-    background-image: url(../img/248.jpg);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
+    font-size: 20px;
     text-align: center;
     line-height: 35px;
-    color: #eee;
+    color: #ccc;
 }
 .wodeyh:hover{
-	background-color: red;
+	background-color: #c40000;
 }
 .wdyhcx{
 	width: 100px;
@@ -318,16 +330,13 @@
 	cursor: pointer;
 	position: absolute;
     top: 445px;
-    font-size: 12px;
-    background-image: url(../img/249.jpg);
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
+    font-size: 20px;
     text-align: center;
     line-height: 35px;
-    color: #eee;
+    color: #ccc;
 }
 .wodeer:hover{
-	background-color: red;
+	background-color: #c40000;
 }
 .wdercx{
 	width: 100px;
