@@ -610,9 +610,9 @@ TCL剧院级音画电视C2体验 地表最强音质
 	const zx=$('.zx');
 	const zx1=$('.zx1');
 	xuanxiangka(zx,zx1);
-	const gsb=$('.gsbmgtv');
-	const yc=$('.yingcang');
-	zhezhao(gsb,yc);
+	// const gsb=$('.gsbmgtv');
+	// const yc=$('.yingcang');
+	// zhezhao(gsb,yc);
 	// Zlunbo('.dstu','.dianshi','','',1,'',1000,0,'',1,type=1);
 	const xmdstu=$('.xmdstu');
 	const xmdszi1=$('.xmdszi1');
@@ -629,6 +629,17 @@ TCL剧院级音画电视C2体验 地表最强音质
 		}
 
 	},1000);
+  var gsbmgtv=$('.gsbmgtv');
+  var yingcang=$('.yingcang');
+  for(let i=0;i<gsbmgtv.length;i++){
+      gsbmgtv[i].onmouseover=function(){
+      animate(yingcang[i],{opacity:1});
+  }
+      gsbmgtv[i].onmouseout=function(){
+      animate(yingcang[i],{opacity:0});
+  }
+  }
+  
 	// Zlunbo('.dstu','.dianshi','','',1,'',1000,0,'',1,type=1);
 </script>
 </body>

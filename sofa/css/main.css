@@ -1330,7 +1330,8 @@
 	top: 0;
 	left: 0;
 	z-index: 5;
-	display: none;
+	/*display: block;*/
+	opacity: 0;
 	cursor: pointer;
 }
 .txsptvb{
