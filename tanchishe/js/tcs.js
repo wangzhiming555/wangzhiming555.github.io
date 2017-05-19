@@ -105,13 +105,13 @@ class tcs{
 			if(shetou.x>19||shetou.x<0||shetou.y>19||shetou.y<0){
 		    	that.tzshijian();
 		    	alert('                                          gameover');
-		    	confirm('再来一局');
+		    	// confirm('再来一局');
 		    	return;
 		    }
 		    for(let i=0;i<that.she.length;i++){
 		    	if(shetou.x==that.she[i].x&&shetou.y==that.she[i].y){
 		    		alert('                                           gameover');
-		    		confirm('再来一局');
+		    		// confirm('再来一局');
 		    		that.tzshijian();
 		    		return;
 		    	}

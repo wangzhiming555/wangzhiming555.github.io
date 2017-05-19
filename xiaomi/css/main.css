@@ -61,6 +61,11 @@ header{
     height: 66px;
     float:left;
 }
+.chanpins1,.chanpins2,.chanpins3,.chanpins4{
+	width: 1176px;
+	height: 413px;
+	position: absolute;
+}
 /*公用样式*/
 .mainbgc{
 	background-color:#ff6700; 
@@ -1514,7 +1519,7 @@ header{
 	background-color: #fff;
 	float: left;
 	transition: all 0.3s linear;
-	position:absolute;
+	position:relative;
 	cursor: pointer;
 }
 .chanpin2{
@@ -1524,7 +1529,7 @@ header{
 	background-color: #fff;
 	float: left;
 	transition: all 0.3s linear;
-	position:absolute;
+	position:relative;
 	cursor: pointer;
 }
 .chanpin3{
@@ -1534,7 +1539,7 @@ header{
 	background-color: #fff;
 	float: left;
 	transition: all 0.3s linear;
-	position:absolute;
+	position:relative;
 	cursor: pointer;
 }
 .chanpin4{
@@ -1544,7 +1549,7 @@ header{
 	background-color: #fff;
 	float: left;
 	transition: all 0.3s linear;
-	position:absolute;
+	position:relative;
 	cursor: pointer;
 }
 .chanpin1:hover{
@@ -1697,7 +1702,7 @@ header{
 	background-color: #fff;
 	float: left;
 	/*border:1px solid #000;*/
-	position: absolute;
+	position: relative;
 	cursor: pointer;
 }
 .chanpin2:hover{

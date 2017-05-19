@@ -1738,6 +1738,7 @@
         	<div class="ding"></div>
         	<div class="chanpin">内容</div>
           <div class="cp111">
+          <div class="chanpins1">
         	<div class="chanpin1">
           <div class="xian1"></div>
         		<div class="tushu">图书</div>
@@ -1772,7 +1773,9 @@
             <div class="shuming1">最优秀的应用和游戏</div>
             <img src="img/66.png" class="tutu2">
           </div>
-          <div class="diandian">
+          
+            </div>
+            <div class="diandian">
               <div class="diandian2"></div>
               <div class="diandian2"></div>
               <div class="diandian2"></div>
@@ -1782,7 +1785,9 @@
             <div class="chanpinyr">&gt</div>
         	</div>
           <div class="cp112">
+          <div class="chanpins2">
           <div class="chanpin2">
+          
           <div class="xian1"></div>
             <div class="tushu">图书</div>
             <div class="shuming">哈利.波特与被诅咒的孩子</div>
@@ -1790,7 +1795,7 @@
             <div class="shuming1">袭 ! 特别彩排版剧本 ! </div>
             <div class="shuming2">29.37元</div>
             <img src="img/63.png" class="tutu">
-            </div>
+           </div> 
             <div class="chanpin2">
           <div class="xian2"></div>
             <div class="tushu">MIUI主题</div>
@@ -1815,6 +1820,8 @@
             <div class="shuming1">最优秀的应用和游戏</div>
             <img src="img/66.png" class="tutu2">
           </div>
+          
+          </div>
           <div class="diandian">
               <div class="diandian3"></div>
               <div class="diandian3"></div>
@@ -1823,9 +1830,10 @@
             </div>
             <div class="chanpinzr1">&lt</div>
             <div class="chanpinyr1">&gt</div>
-            </div>
+          </div>
             
-            <div class="cp113">
+          <div class="cp113">
+          <div class="chanpins3">
         	<div class="chanpin3">
           <div class="xian1"></div>
             <div class="tushu">图书</div>
@@ -1860,6 +1868,7 @@
             <div class="shuming1">最优秀的应用和游戏</div>
             <img src="img/66.png" class="tutu2">
           </div>
+          </div>
           <div class="diandian">
               <div class="diandian4"></div>
               <div class="diandian4"></div>
@@ -1868,8 +1877,10 @@
             </div>
             <div class="chanpinzr2">&lt</div>
             <div class="chanpinyr2">&gt</div>
+
           </div>
           <div class="cp114">
+          <div class="chanpins4">
         	<div class="chanpin4">
           <div class="xian1"></div>
             <div class="tushu">图书</div>
@@ -1903,6 +1914,7 @@
             <div class="shuming">2017金米奖</div>
             <div class="shuming1">最优秀的应用和游戏</div>
             <img src="img/66.png" class="tutu2">
+          </div>
           </div>
           <div class="diandian">
               <div class="diandian5"></div>
@@ -2151,14 +2163,152 @@
         xuanxiangka(ban9,lil9);
         Zlunbo('.lun','.lun1','.bannerdian','[]',1,'#fff',3000,0,'#aaa',4,type=1,'.zuo','.you');
     }); 
-        // const chanpin1=$('.chanpin1');
-        // const cp1=$('.cp111');
-        // const left=$('.chanpinzr');
-        // const right=$('.chanpinyr');
-        zylunbo('.chanpin1','.cp111','.chanpinzr','.chanpinyr','.diandian2','#ff7010','#b0b0b0');
-        zylunbo('.chanpin2','.cp112','.chanpinzr1','.chanpinyr1','.diandian3','#ff7010','#b0b0b0');
-        zylunbo('.chanpin3','.cp113','.chanpinzr2','.chanpinyr2','.diandian4','#ff7010','#b0b0b0');
-        zylunbo('.chanpin4','.cp114','.chanpinzr3','.chanpinyr3','.diandian5','#ff7010','#b0b0b0');
+        var chanpins1=$('.chanpins1')[0];
+        var chanpinzr=$('.chanpinzr')[0];
+        var chanpinyr=$('.chanpinyr')[0];
+        var chanpin1=$('.chanpin1');
+        var diandian2=$('.diandian2');
+        var l=0;
+        var pro;
+        diandian2[0].style.background='#ff7010';
+        chanpinzr.onclick=function(){
+          l++;
+          pro=l-1;
+          if(l>chanpin1.length-1){
+            l=0;
+            pro=chanpin1.length-1;
+            chanpins1.style.left=0;
+            diandian2[l].style.background='#ff7010';
+            diandian2[pro].style.background='#b0b0b0';
+          }
+          animate(chanpins1,{left:-l*294},function(){
+            diandian2[l].style.background='#ff7010';
+            diandian2[pro].style.background='#b0b0b0';
+          });
+          chanpinyr.onclick=function(){
+            l--;
+            pro=l+1;
+            if(l<0){
+              l=chanpin1.length-1;
+              pro=chanpin1.length-2;
+              diandian2[l].style.background='#ff7010';
+              diandian2[pro].style.background='#b0b0b0';
+            }
+            animate(chanpins1,{left:l*294},function(){
+              diandian2[l].style.background='#ff7010';
+              diandian2[pro].style.background='#b0b0b0';
+            })
+          }
+        }
+        var chanpins2=$('.chanpins2')[0];
+        var chanpinzr1=$('.chanpinzr1')[0];
+        var chanpinyr1=$('.chanpinyr1')[0];
+        var diandian3=$('.diandian3');
+        var l1=0;
+        var pro1;
+        diandian3[0].style.background='#ff7010';
+        chanpinzr1.onclick=function(){
+          l1++;
+          pro1=l1+1;
+          if(l1>chanpin1.length-1){
+            l1=0;
+            pro1=chanpin1.length-1;
+            chanpins2.style.left=0;
+            diandian2[l1].style.background='#ff7010';
+            diandian2[pro1].style.background='#b0b0b0';
+          }
+          animate(chanpins2,{left:-l1*294},function(){
+            diandian3[l1].style.background='#ff7010';
+            diandian3[pro1].style.background='#b0b0b0';
+          });
+          chanpinyr1.onclick=function(){
+            l1--;
+            pro1=l1+1;
+            if(l1<0){
+              l1=chanpin1.length-1;
+              pro1=chanpin1.length-2;
+              diandian3[l1].style.background='#ff7010';
+              diandian3[pro1].style.background='#b0b0b0';
+            }
+            animate(chanpins2,{left:l1*294},function(){
+              diandian3[l1].style.background='#ff7010';
+              diandian3[pro1].style.background='#b0b0b0';
+            })
+          }
+        }
+        var chanpins3=$('.chanpins3')[0];
+        var chanpinzr2=$('.chanpinzr2')[0];
+        var chanpinyr2=$('.chanpinyr2')[0];
+        var diandian4=$('.diandian4');
+        var l2=0;
+        var pro2;
+        diandian4[0].style.background='#ff7010';
+        chanpinzr2.onclick=function(){
+          l2++;
+          pro2=l2+1;
+          if(l2>chanpin1.length-1){
+            l2=0;
+            pro2=chanpin1.length-1;
+            chanpins3.style.left=0;
+            diandian3[l2].style.background='#ff7010';
+            diandian3[pro2].style.background='#b0b0b0';
+          }
+          animate(chanpins3,{left:-l2*294},function(){
+            diandian4[l2].style.background='#ff7010';
+            diandian4[pro2].style.background='#b0b0b0';
+          });
+          chanpinyr2.onclick=function(){
+            l2--;
+            pro2=l2+1;
+            if(l2<0){
+              l2=chanpin1.length-1;
+              pro1=chanpin1.length-2;
+              diandian4[l2].style.background='#ff7010';
+              diandian4[pro2].style.background='#b0b0b0';
+            }
+            animate(chanpins3,{left:l2*294},function(){
+              diandian4[l2].style.background='#ff7010';
+              diandian4[pro2].style.background='#b0b0b0';
+            })
+          }
+        }
+        // zylunbo('.chanpin4','.cp114','.chanpinzr3','.chanpinyr3','.diandian5','#ff7010','#b0b0b0');
+        var chanpins4=$('.chanpins4')[0];
+        var chanpinzr3=$('.chanpinzr3')[0];
+        var chanpinyr3=$('.chanpinyr3')[0];
+        var diandian5=$('.diandian5');
+        var l3=0;
+        var pro3;
+        diandian5[0].style.background='#ff7010';
+        chanpinzr3.onclick=function(){
+          l3++;
+          pro3=l3+1;
+          if(l3>chanpin1.length-1){
+            l3=0;
+            pro3=chanpin1.length-1;
+            chanpins4.style.left=0;
+            diandian4[l3].style.background='#ff7010';
+            diandian4[pro3].style.background='#b0b0b0';
+          }
+          animate(chanpins4,{left:-l3*294},function(){
+            diandian5[l3].style.background='#ff7010';
+            diandian5[pro3].style.background='#b0b0b0';
+          });
+          chanpinyr3.onclick=function(){
+            l3--;
+            pro3=l3+1;
+            if(l3<0){
+              l3=chanpin1.length-1;
+              pro3=chanpin1.length-2;
+              diandian5[l3].style.background='#ff7010';
+              diandian5[pro3].style.background='#b0b0b0';
+            }
+            animate(chanpins4,{left:l3*294},function(){
+              diandian5[l3].style.background='#ff7010';
+              diandian5[pro3].style.background='#b0b0b0';
+            })
+          }
+        }
         const e3=$('.e3')[0];
         const leftt=$('.leftt')[0];
         const rightt=$('.rightt')[0];
