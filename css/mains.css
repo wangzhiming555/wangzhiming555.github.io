@@ -572,16 +572,36 @@ body{
 	width: 60%;
 	height: 320px;
 	float: left;
-	border:1px solid #fff;
-	background-color: #000;
+	/*border:1px solid #fff;*/
+	/*background-color: #000;*/
 	opacity: 0.9;
-	margin-left: 235px;
-	background-image: url(../img/30.jpg);
+	position: relative;
+	top: 30px;
+	left: 270px;
+	right:0;
+	bottom:0;
+	margin:0 auto;
+}
+.kupao{
+	width:240px;
+	height:320px;
+	position: absolute;
+	background-color: #000;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:0 auto;
+	background-image: url("../img/37.png");
 	background-size: cover;
 	background-repeat: no-repeat;
-	position: relative;
-	top: 800px;
-	left: 0;
+	cursor: pointer;
+	perspective: 500px;
+	transition:all 0.8s linear;
+}
+.kupao:hover{
+	transform-origin: 120px 160px 0;
+	transform: rotateY(180deg);
 }
 .fp-tableCell{
 	background-color: #000;
