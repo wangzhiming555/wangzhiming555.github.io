@@ -2870,45 +2870,45 @@
 </div>
 </body>
 <script src="js/animate.js"></script>
-<script>
-    var body=document.querySelector('body');
-    body.style.left=0+'px';
-    var sx,cx;
-    body.addEventListener('touchstart',function (e) {
-        var touches=e.touches[0];
-        sx=touches.clientX-body.offsetLeft;
-    },false);
-    body.addEventListener('touchmove',function (e) {
-        var touches=e.touches[0];
-        var mx=touches.clientX;
-        cx=sx-mx;
-    })
-    body.addEventListener('touchend',function (e) {
-        var lefts=parseInt(body.style.left);
-        if(cx<0){
-            if(lefts==0){
-                body.style.left=0+'px';
-            }
-            else{
-                animate(body,{left:lefts+750},function () {
-                    body.style.left=lefts+750+'px';
-                })
-            }
-        }
-        else{
-            if(lefts==4500){
-                body.style.left=4500+'px';
-            }
-            else{
-                animate(body,{left:lefts-750},function () {
-                    body.style.left=lefts-750+'px';
-                })
-            }
-        }
-        body.removeEventListener('touchstart',false);
-        body.removeEventListener('touchmove',false);
-        sx=0;
-        cx=0;
-    })
-</script>
+<!--<script>-->
+    <!--var body=document.querySelector('body');-->
+    <!--body.style.left=0+'px';-->
+    <!--var sx,cx;-->
+    <!--body.addEventListener('touchstart',function (e) {-->
+        <!--var touches=e.touches[0];-->
+        <!--sx=touches.clientX-body.offsetLeft;-->
+    <!--},false);-->
+    <!--body.addEventListener('touchmove',function (e) {-->
+        <!--var touches=e.touches[0];-->
+        <!--var mx=touches.clientX;-->
+        <!--cx=sx-mx;-->
+    <!--})-->
+    <!--body.addEventListener('touchend',function (e) {-->
+        <!--var lefts=parseInt(body.style.left);-->
+        <!--if(cx<0){-->
+            <!--if(lefts==0){-->
+                <!--body.style.left=0+'px';-->
+            <!--}-->
+            <!--else{-->
+                <!--animate(body,{left:lefts+750},function () {-->
+                    <!--body.style.left=lefts+750+'px';-->
+                <!--})-->
+            <!--}-->
+        <!--}-->
+        <!--else{-->
+            <!--if(lefts==4500){-->
+                <!--body.style.left=4500+'px';-->
+            <!--}-->
+            <!--else{-->
+                <!--animate(body,{left:lefts-750},function () {-->
+                    <!--body.style.left=lefts-750+'px';-->
+                <!--})-->
+            <!--}-->
+        <!--}-->
+        <!--body.removeEventListener('touchstart',false);-->
+        <!--body.removeEventListener('touchmove',false);-->
+        <!--sx=0;-->
+        <!--cx=0;-->
+    <!--})-->
+<!--</script>-->
 </html>
